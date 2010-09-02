@@ -1,0 +1,810 @@
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (209.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (9.0ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (165.0ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRecipes (20100830212324)
+  [4;36;1mSQL (108.0ms)[0m   [0;1mCREATE TABLE `recipes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `instructions` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100830212324')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `recipes`[0m
+  [4;36;1mSQL (70.0ms)[0m   [0;1mdescribe `recipes`[0m
+  [4;35;1mSQL (21.0ms)[0m   [0mSHOW KEYS FROM `recipes`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-09-01 14:21:04) [GET]
+  [4;36;1mRecipe Load (58.0ms)[0m   [0;1mSELECT * FROM `recipes` [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 260ms (View: 193, DB: 59) | 200 OK [http://127.0.0.1/recipes]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#new (for 127.0.0.1 at 2010-09-01 14:21:15) [GET]
+  [4;35;1mRecipe Columns (59.0ms)[0m   [0mSHOW FIELDS FROM `recipes`[0m
+Rendering template within layouts/recipes
+Rendering recipes/new
+Completed in 86ms (View: 16, DB: 59) | 200 OK [http://127.0.0.1/recipes/new]
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-09-01 14:21:37) [GET]
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM `recipes` [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 12ms (View: 2, DB: 3) | 200 OK [http://127.0.0.1/recipes]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-09-01 14:21:53) [GET]
+  Parameters: {"id"=>"edit"}
+  [4;35;1mRecipe Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `recipes`[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM `recipes` WHERE (`recipes`.`id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Recipe with ID=edit):
+  app/controllers/recipes_controller.rb:16:in `show'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (40.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-09-01 14:22:28) [GET]
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM `recipes` [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 86ms (View: 77, DB: 2) | 200 OK [http://127.0.0.1/recipes]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#new (for 127.0.0.1 at 2010-09-01 14:22:30) [GET]
+  [4;36;1mRecipe Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `recipes`[0m
+Rendering template within layouts/recipes
+Rendering recipes/new
+Completed in 25ms (View: 11, DB: 3) | 200 OK [http://127.0.0.1/recipes/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#create (for 127.0.0.1 at 2010-09-01 14:24:29) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"tg551Hy5cYcUg4qd41kTK99J5CHak5I6lm+vvsmQJAo=", "recipe"=>{"title"=>"Mascarpone Stuffed French Toast with Peaches", "instructions"=>"\r\nIngredients\r\n\r\n    * 8 fresh peaches\r\n    * 1/2 cup sugar\r\n    * 4 pinches ground nutmeg\r\n    * 1/2 teaspoon ground cinnamon\r\n    * 4 Mexican bolillo rolls\r\n    * 1 cup mascarpone cheese\r\n    * 6 tablespoons confectioners' sugar\r\n    * 1 lemon, zested\r\n    * 6 eggs\r\n    * 3/4 cup milk\r\n    * 1/2 teaspoon vanilla extract\r\n    * 2 teaspoons butter, or as needed\r\n    * 2 teaspoons vegetable oil, or as needed\r\n\r\nDirections\r\n\r\n   1. Peel peaches, remove pits, and slice into a heavy saucepan, catching all the juices. Stir in sugar, nutmeg, and cinnamon, and cook over medium heat until bubbly. Continue cooking, stirring occasionally, until the sauce reaches a syrupy consistency, about 10 minutes. Remove from heat.\r\n   2. Meanwhile, cut off and discard the ends of the bolillo rolls. Slice the rolls into 1 1/4-inch-thick slices. Lay each slice of bread on a board, and with a sharp knife held parallel to the board, cut a pocket into each slice, leaving three sides intact. Set aside.\r\n   3. Stir together the mascarpone, confectioners' sugar, and lemon zest until smooth. Scoop this mixture into a small plastic bag. Cut off one corner of the bag, and pipe as much filling into the pocket in each slice of bread as will fit without overflowing.\r\n   4. Whisk together the eggs, milk, and vanilla in a shallow bowl. Melt butter with oil over medium heat in a large nonstick skillet. Dip each stuffed piece of bread into the batter, add to the skillet, and cook until browned on both sides. Serve hot with the warm peach sauce.\r\n\r\n"}}
+  [4;35;1mRecipe Columns (38.0ms)[0m   [0mSHOW FIELDS FROM `recipes`[0m
+  [4;36;1mSQL (41.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRecipe Create (0.0ms)[0m   [0mINSERT INTO `recipes` (`created_at`, `title`, `updated_at`, `instructions`) VALUES('2010-09-01 21:24:29', 'Mascarpone Stuffed French Toast with Peaches', '2010-09-01 21:24:29', '\r\nIngredients\r\n\r\n * 8 fresh peaches\r\n * 1/2 cup sugar\r\n * 4 pinches ground nutmeg\r\n * 1/2 teaspoon ground cinnamon\r\n * 4 Mexican bolillo rolls\r\n * 1 cup mascarpone cheese\r\n * 6 tablespoons confectioners\' sugar\r\n * 1 lemon, zested\r\n * 6 eggs\r\n * 3/4 cup milk\r\n * 1/2 teaspoon vanilla extract\r\n * 2 teaspoons butter, or as needed\r\n * 2 teaspoons vegetable oil, or as needed\r\n\r\nDirections\r\n\r\n 1. Peel peaches, remove pits, and slice into a heavy saucepan, catching all the juices. Stir in sugar, nutmeg, and cinnamon, and cook over medium heat until bubbly. Continue cooking, stirring occasionally, until the sauce reaches a syrupy consistency, about 10 minutes. Remove from heat.\r\n 2. Meanwhile, cut off and discard the ends of the bolillo rolls. Slice the rolls into 1 1/4-inch-thick slices. Lay each slice of bread on a board, and with a sharp knife held parallel to the board, cut a pocket into each slice, leaving three sides intact. Set aside.\r\n 3. Stir together the mascarpone, confectioners\' sugar, and lemon zest until smooth. Scoop this mixture into a small plastic bag. Cut off one corner of the bag, and pipe as much filling into the pocket in each slice of bread as will fit without overflowing.\r\n 4. Whisk together the eggs, milk, and vanilla in a shallow bowl. Melt butter with oil over medium heat in a large nonstick skillet. Dip each stuffed piece of bread into the batter, add to the skillet, and cook until browned on both sides. Serve hot with the warm peach sauce.\r\n\r\n')[0m
+  [4;36;1mSQL (94.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/recipes/1
+Completed in 189ms (DB: 174) | 302 Found [http://127.0.0.1/recipes]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-09-01 14:24:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRecipe Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `recipes`[0m
+  [4;36;1mRecipe Load (17.0ms)[0m   [0;1mSELECT * FROM `recipes` WHERE (`recipes`.`id` = 1) [0m
+Rendering template within layouts/recipes
+Rendering recipes/show
+Completed in 40ms (View: 9, DB: 20) | 200 OK [http://127.0.0.1/recipes/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#edit (for 127.0.0.1 at 2010-09-01 14:25:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRecipe Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `recipes`[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM `recipes` WHERE (`recipes`.`id` = 1) [0m
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 28ms (View: 15, DB: 2) | 200 OK [http://127.0.0.1/recipes/1/edit]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-09-01 14:25:29) [GET]
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM `recipes` [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mRecipe Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `recipes`[0m
+Completed in 21ms (View: 8, DB: 4) | 200 OK [http://127.0.0.1/recipes]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 14:26:42) [GET]
+
+ActionController::RoutingError (No route matches "/welcome" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 14:27:27) [GET]
+
+ActionController::RoutingError (No route matches "/welcome" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 14:27:28) [GET]
+
+ActionController::RoutingError (No route matches "/welcome" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 14:27:28) [GET]
+
+ActionController::RoutingError (No route matches "/welcome" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 14:27:28) [GET]
+
+ActionController::RoutingError (No route matches "/welcome" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 14:27:28) [GET]
+
+ActionController::RoutingError (No route matches "/welcome" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 14:27:43) [GET]
+
+ActionController::RoutingError (No route matches "/welcome" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 14:27:45) [GET]
+
+ActionController::RoutingError (No route matches "/welcome" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-09-01 14:27:45) [GET]
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM `recipes` [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mRecipe Columns (43.0ms)[0m   [0;1mSHOW FIELDS FROM `recipes`[0m
+Completed in 60ms (View: 8, DB: 45) | 200 OK [http://127.0.0.1/recipes]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#edit (for 127.0.0.1 at 2010-09-01 14:27:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRecipe Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `recipes`[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM `recipes` WHERE (`recipes`.`id` = 1) [0m
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 22ms (View: 11, DB: 2) | 200 OK [http://127.0.0.1/recipes/1/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-09-01 14:27:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRecipe Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `recipes`[0m
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM `recipes` WHERE (`recipes`.`id` = 1) [0m
+Rendering template within layouts/recipes
+Rendering recipes/show
+Completed in 16ms (View: 4, DB: 4) | 200 OK [http://127.0.0.1/recipes/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#new (for 127.0.0.1 at 2010-09-01 14:27:47) [GET]
+  [4;35;1mRecipe Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `recipes`[0m
+Rendering template within layouts/recipes
+Rendering recipes/new
+Completed in 22ms (View: 9, DB: 2) | 200 OK [http://127.0.0.1/recipes/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-09-01 14:27:48) [GET]
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM `recipes` [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;35;1mRecipe Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `recipes`[0m
+Completed in 19ms (View: 8, DB: 3) | 200 OK [http://127.0.0.1/recipes]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 14:44:06) [GET]
+
+ActionController::RoutingError (No route matches "/-p%203000" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 14:45:10) [GET]
+
+ActionController::RoutingError (No route matches "/-p%203000" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-09-01 14:45:23) [GET]
+  [4;36;1mRecipe Load (67.0ms)[0m   [0;1mSELECT * FROM `recipes` [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;35;1mRecipe Columns (31.0ms)[0m   [0mSHOW FIELDS FROM `recipes`[0m
+Completed in 114ms (View: 8, DB: 98) | 200 OK [http://127.0.0.1/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-09-01 14:49:49) [GET]
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM `recipes` [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;35;1mRecipe Columns (69.0ms)[0m   [0mSHOW FIELDS FROM `recipes`[0m
+Completed in 87ms (View: 8, DB: 70) | 200 OK [http://127.0.0.1/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (59.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (114.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRecipes (20100830212324)
+Migrating to CreateCategories (20100901215049)
+  [4;36;1mSQL (1061.0ms)[0m   [0;1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100901215049')[0m
+  [4;36;1mSQL (19.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (198.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (21.0ms)[0m   [0;1mdescribe `categories`[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mSHOW KEYS FROM `categories`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `recipes`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `recipes`[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mSHOW KEYS FROM `recipes`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-09-01 15:03:38) [GET]
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM `recipes` [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;35;1mRecipe Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `recipes`[0m
+Completed in 20ms (View: 8, DB: 4) | 200 OK [http://127.0.0.1/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#new (for 127.0.0.1 at 2010-09-01 15:03:48) [GET]
+  [4;36;1mCategory Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendering template within layouts/categories
+Rendering categories/new
+Completed in 31ms (View: 20, DB: 1) | 200 OK [http://127.0.0.1/categories/new]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#create (for 127.0.0.1 at 2010-09-01 15:04:09) [POST]
+  Parameters: {"category"=>{"name"=>"French Toast"}, "commit"=>"Create", "authenticity_token"=>"tg551Hy5cYcUg4qd41kTK99J5CHak5I6lm+vvsmQJAo="}
+  [4;35;1mCategory Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCategory Create (0.0ms)[0m   [0mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('French Toast', '2010-09-01 22:04:09', '2010-09-01 22:04:09')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/categories/1
+Completed in 16ms (DB: 4) | 302 Found [http://127.0.0.1/categories]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-09-01 15:04:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/categories
+Rendering categories/show
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/categories/1]
+  [4;35;1mSQL (51.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#edit (for 127.0.0.1 at 2010-09-01 21:47:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Columns (319.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (27.0ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/categories
+Rendering categories/edit
+Completed in 656ms (View: 17, DB: 397) | 200 OK [http://127.0.0.1/categories/1/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#edit (for 127.0.0.1 at 2010-09-01 21:47:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (1.0ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/categories
+Rendering categories/edit
+Completed in 21ms (View: 9, DB: 3) | 200 OK [http://127.0.0.1/categories/1/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-09-01 21:47:50) [GET]
+  [4;35;1mRecipe Load (119.0ms)[0m   [0mSELECT * FROM `recipes` [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mRecipe Columns (38.0ms)[0m   [0;1mSHOW FIELDS FROM `recipes`[0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #13 of app/views/recipes/index.html.erb:
+10: <% @recipes.each do |recipe| %>
+11:   <tr>
+12:     <td><%=h recipe.title %></td>
+13: 	<td><%=h recipe.category.name %></td> 
+14:     <td><%=h recipe.instructions %></td>
+15:     <td><%= link_to 'Show', recipe %></td>
+16:     <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+
+    app/views/recipes/index.html.erb:13
+    app/views/recipes/index.html.erb:10:in `each'
+    app/views/recipes/index.html.erb:10
+    app/controllers/recipes_controller.rb:7:in `index'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (53.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-09-01 21:47:56) [GET]
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM `recipes` [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mRecipe Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `recipes`[0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #13 of app/views/recipes/index.html.erb:
+10: <% @recipes.each do |recipe| %>
+11:   <tr>
+12:     <td><%=h recipe.title %></td>
+13: 	<td><%=h recipe.category.name %></td> 
+14:     <td><%=h recipe.instructions %></td>
+15:     <td><%= link_to 'Show', recipe %></td>
+16:     <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+
+    app/views/recipes/index.html.erb:13
+    app/views/recipes/index.html.erb:10:in `each'
+    app/views/recipes/index.html.erb:10
+    app/controllers/recipes_controller.rb:7:in `index'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (140.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-09-01 21:48:02) [GET]
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM `recipes` [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mRecipe Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `recipes`[0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #13 of app/views/recipes/index.html.erb:
+10: <% @recipes.each do |recipe| %>
+11:   <tr>
+12:     <td><%=h recipe.title %></td>
+13: 	<td><%=h recipe.category.name %></td> 
+14:     <td><%=h recipe.instructions %></td>
+15:     <td><%= link_to 'Show', recipe %></td>
+16:     <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+
+    app/views/recipes/index.html.erb:13
+    app/views/recipes/index.html.erb:10:in `each'
+    app/views/recipes/index.html.erb:10
+    app/controllers/recipes_controller.rb:7:in `index'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (54.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-09-01 21:48:02) [GET]
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM `recipes` [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mRecipe Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `recipes`[0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #13 of app/views/recipes/index.html.erb:
+10: <% @recipes.each do |recipe| %>
+11:   <tr>
+12:     <td><%=h recipe.title %></td>
+13: 	<td><%=h recipe.category.name %></td> 
+14:     <td><%=h recipe.instructions %></td>
+15:     <td><%= link_to 'Show', recipe %></td>
+16:     <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+
+    app/views/recipes/index.html.erb:13
+    app/views/recipes/index.html.erb:10:in `each'
+    app/views/recipes/index.html.erb:10
+    app/controllers/recipes_controller.rb:7:in `index'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (139.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-09-01 21:48:02) [GET]
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM `recipes` [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mRecipe Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `recipes`[0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #13 of app/views/recipes/index.html.erb:
+10: <% @recipes.each do |recipe| %>
+11:   <tr>
+12:     <td><%=h recipe.title %></td>
+13: 	<td><%=h recipe.category.name %></td> 
+14:     <td><%=h recipe.instructions %></td>
+15:     <td><%= link_to 'Show', recipe %></td>
+16:     <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+
+    app/views/recipes/index.html.erb:13
+    app/views/recipes/index.html.erb:10:in `each'
+    app/views/recipes/index.html.erb:10
+    app/controllers/recipes_controller.rb:7:in `index'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (53.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-09-01 21:48:49) [GET]
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM `recipes` [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;35;1mRecipe Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `recipes`[0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #13 of app/views/recipes/index.html.erb:
+10: <% @recipes.each do |recipe| %>
+11:   <tr>
+12:     <td><%=h recipe.title %></td>
+13: 	<td><%=h recipe.category.name %></td> 
+14:     <td><%=h recipe.instructions %></td>
+15:     <td><%= link_to 'Show', recipe %></td>
+16:     <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+
+    app/views/recipes/index.html.erb:13
+    app/views/recipes/index.html.erb:10:in `each'
+    app/views/recipes/index.html.erb:10
+    app/controllers/recipes_controller.rb:7:in `index'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (53.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-09-01 21:49:07) [GET]
+  [4;36;1mRecipe Load (3.0ms)[0m   [0;1mSELECT * FROM `recipes` [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;35;1mRecipe Columns (24.0ms)[0m   [0mSHOW FIELDS FROM `recipes`[0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #13 of app/views/recipes/index.html.erb:
+10: <% @recipes.each do |recipe| %>
+11:   <tr>
+12:     <td><%=h recipe.title %></td>
+13: 	<td><%=h recipe.category.name %></td> 
+14:     <td><%=h recipe.instructions %></td>
+15:     <td><%= link_to 'Show', recipe %></td>
+16:     <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+
+    app/views/recipes/index.html.erb:13
+    app/views/recipes/index.html.erb:10:in `each'
+    app/views/recipes/index.html.erb:10
+    app/controllers/recipes_controller.rb:7:in `index'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (53.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-09-01 21:50:14) [GET]
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM `recipes` [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;35;1mRecipe Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `recipes`[0m
+Completed in 33ms (View: 15, DB: 9) | 200 OK [http://127.0.0.1/recipes]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-09-01 21:50:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `recipes`[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM `recipes` WHERE (`recipes`.`id` = 1) [0m
+Rendering template within layouts/recipes
+Rendering recipes/show
+Completed in 21ms (View: 8, DB: 2) | 200 OK [http://127.0.0.1/recipes/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#edit (for 127.0.0.1 at 2010-09-01 21:50:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `recipes`[0m
+  [4;35;1mRecipe Load (0.0ms)[0m   [0mSELECT * FROM `recipes` WHERE (`recipes`.`id` = 1) [0m
+  [4;36;1mCategory Load (1.0ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/recipes
+Rendering recipes/edit
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `categories` [0m
+  [4;36;1mCategory Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+
+ActionView::TemplateError (undefined method `category_id' for #<Recipe:0x7f05dc94>) on line #7 of app/views/recipes/edit.html.erb:
+4:   <%= f.error_messages %>
+5: 	<p>
+6:    <%= f.label :category %><br />
+7:    <%= select "recipe", "category_id", Category.find(:all).collect {|p| [ p.name, p.id ] }, {:include_blank => true} %>
+8:  	</p>
+9: 
+10:   <p>
+
+    app/views/recipes/edit.html.erb:7
+    app/views/recipes/edit.html.erb:3
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (137.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-09-01 21:50:49) [GET]
+  [4;35;1mRecipe Load (1.0ms)[0m   [0mSELECT * FROM `recipes` [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mRecipe Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `recipes`[0m
+Completed in 22ms (View: 7, DB: 6) | 200 OK [http://127.0.0.1/recipes]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#edit (for 127.0.0.1 at 2010-09-01 21:51:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRecipe Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `recipes`[0m
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSELECT * FROM `recipes` WHERE (`recipes`.`id` = 1) [0m
+  [4;35;1mCategory Load (2.0ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/recipes
+Rendering recipes/edit
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mCategory Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+
+ActionView::TemplateError (undefined method `category_id' for #<Recipe:0x7f156998>) on line #7 of app/views/recipes/edit.html.erb:
+4:   <%= f.error_messages %>
+5: 	<p>
+6:    <%= f.label :category %><br />
+7:    <%= select "recipe", "category_id", Category.find(:all).collect {|p| [ p.name, p.id ] }, {:include_blank => true} %>
+8:  	</p>
+9: 
+10:   <p>
+
+    app/views/recipes/edit.html.erb:7
+    app/views/recipes/edit.html.erb:3
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (52.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-09-01 21:52:25) [GET]
+  [4;36;1mRecipe Load (374.0ms)[0m   [0;1mSELECT * FROM `recipes` [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;35;1mRecipe Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `recipes`[0m
+Completed in 394ms (View: 8, DB: 376) | 200 OK [http://127.0.0.1/recipes/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (426.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (96.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRecipes (20100830212324)
+Migrating to CreateCategories (20100901215049)
+Migrating to AddCategoryToRecipe (20100902045956)
+  [4;36;1mSQL (1019.0ms)[0m   [0;1mALTER TABLE `recipes` ADD `category_id` int[0m
+  [4;35;1mSQL (25.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100902045956')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (48.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (12.0ms)[0m   [0;1mdescribe `categories`[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mSHOW KEYS FROM `categories`[0m
+  [4;36;1mSQL (39.0ms)[0m   [0;1mSHOW FIELDS FROM `recipes`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `recipes`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `recipes`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (17.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRecipes (20100830212324)
+Migrating to CreateCategories (20100901215049)
+Migrating to AddCategoryToRecipe (20100902045956)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (36.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `categories`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `categories`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `recipes`[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mdescribe `recipes`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `recipes`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#new (for 127.0.0.1 at 2010-09-01 22:31:06) [GET]
+  [4;36;1mCategory Columns (372.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendering template within layouts/categories
+Rendering categories/new
+Completed in 487ms (View: 105, DB: 373) | 200 OK [http://127.0.0.1/categories/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#create (for 127.0.0.1 at 2010-09-01 22:31:49) [POST]
+  Parameters: {"category"=>{"name"=>"Breakfast"}, "commit"=>"Create", "authenticity_token"=>"tg551Hy5cYcUg4qd41kTK99J5CHak5I6lm+vvsmQJAo="}
+  [4;35;1mCategory Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCategory Create (1.0ms)[0m   [0mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('Breakfast', '2010-09-02 05:31:49', '2010-09-02 05:31:49')[0m
+  [4;36;1mSQL (343.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/categories/2
+Completed in 363ms (DB: 351) | 302 Found [http://127.0.0.1/categories]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-09-01 22:31:50) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mCategory Columns (23.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (1.0ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 2) [0m
+Rendering template within layouts/categories
+Rendering categories/show
+Completed in 43ms (View: 9, DB: 25) | 200 OK [http://127.0.0.1/categories/2]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#edit (for 127.0.0.1 at 2010-09-01 22:43:59) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mCategory Columns (396.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 2) [0m
+Rendering template within layouts/categories
+Rendering categories/edit
+Completed in 423ms (View: 15, DB: 397) | 200 OK [http://127.0.0.1/categories/2/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-09-01 22:44:04) [GET]
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/categories
+Rendering categories/index
+  [4;36;1mCategory Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Completed in 30ms (View: 17, DB: 2) | 200 OK [http://127.0.0.1/categories]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (375.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRecipes (20100830212324)
+Migrating to CreateCategories (20100901215049)
+Migrating to AddCategoryToRecipe (20100902045956)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (38.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mdescribe `categories`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `categories`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `recipes`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `recipes`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `recipes`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (77.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRecipes (20100830212324)
+Migrating to CreateCategories (20100901215049)
+Migrating to AddCategoryToRecipe (20100902045956)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (22.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `categories`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `categories`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `recipes`[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mdescribe `recipes`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW KEYS FROM `recipes`[0m
